@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizQuestionActivity"
-    android:theme="@style/Theme.MaterialComponents">
+    tools:context=".QuizQuestionActivity">
 
     <TextView
         android:id="@+id/questionNumberTextView"
@@ -26,50 +25,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView" />
 
-    <com.google.android.material.button.MaterialButtonToggleGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
+        <ToggleButton
             android:id="@+id/option1Button"
             style="@style/answerButtonStyle"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Button"
             app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
             app:layout_constraintEnd_toStartOf="@+id/centerVerticalGuideline" />
 
-        <Button
+        <ToggleButton
             android:id="@+id/option2Button"
             style="@style/answerButtonStyle"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
-            android:text="Button"
             app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
             app:layout_constraintStart_toStartOf="@+id/centerVerticalGuideline" />
 
-        <Button
+        <ToggleButton
             android:id="@+id/option3Button"
             style="@style/answerButtonStyle"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Button"
             app:layout_constraintEnd_toStartOf="@+id/centerVerticalGuideline"
             app:layout_constraintTop_toTopOf="@+id/centerHorizontalGuideline" />
 
-        <Button
+        <ToggleButton
             android:id="@+id/option4Button"
             style="@style/answerButtonStyle"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Button"
             app:layout_constraintStart_toStartOf="@+id/centerVerticalGuideline"
             app:layout_constraintTop_toTopOf="@+id/centerHorizontalGuideline" />
-    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <Button
         android:id="@+id/nextQuestionButton"
@@ -79,7 +65,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/centerVerticalGuideline"
