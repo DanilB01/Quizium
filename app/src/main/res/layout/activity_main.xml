@@ -20,7 +20,7 @@
     <Button
         android:id="@+id/selectQuizButton"
         style="@style/mainButtonStyle"
-        android:text="Выбрать викторину"
+        android:text="@string/chooseQuiz"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/rankingButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
     <Button
         android:id="@+id/rankingButton"
         style="@style/mainButtonStyle"
-        android:text="Посмотреть рейтинг"
+        android:text="@string/seeRanking"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,18 +39,11 @@
     <Button
         android:id="@+id/quitButton"
         style="@style/mainButtonStyle"
-        android:text="Выйти"
+        android:text="@string/quit"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rankingButton" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"        
-        app:layout_constraintStart_toStartOf="parent />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

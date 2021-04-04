@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Quizium</string>
+    <string name="chooseQuiz">Выбрать викторину</string>
+    <string name="seeRanking">Посмотреть рейтинг</string>
+    <string name="quit">Выйти</string>
 </resources>
