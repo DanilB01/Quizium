@@ -14,12 +14,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn = findViewById(R.id.selectQuizButton);
+        Button btn1 = findViewById(R.id.selectQuizButton);
+        Button btn2 = findViewById(R.id.rankingButton);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QuizQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, QuizResultActivity.class);
                 startActivity(intent);
             }
         });

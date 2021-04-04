@@ -35,12 +35,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:backgroundTint">@color/mainColorPurple</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:layout_marginHorizontal">16dp</item>
     </style>
 
     <style name="purpleTextStyle">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/mainColorPurple</item>
     </style>
 
@@ -50,6 +50,14 @@
 
     <style name="purpleNameTextStyle" parent="purpleTextStyle">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BlueTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/mainColorBlue</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
 </resources>
