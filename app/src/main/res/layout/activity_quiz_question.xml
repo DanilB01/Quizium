@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizQuestionActivity">
+    tools:context=".QuizQuestionActivity"
+    android:theme="@style/Theme.MaterialComponents">
 
     <TextView
         android:id="@+id/questionNumberTextView"
@@ -24,8 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView" />
 
-    <RadioGroup
-        android:id="@+id/answersGroupButton"
+    <com.google.android.material.button.MaterialButtonToggleGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,46 +34,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow>
-        <RadioButton
+        <Button
             android:id="@+id/option1Button"
             style="@style/answerButtonStyle"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
             app:layout_constraintEnd_toStartOf="@+id/centerVerticalGuideline" />
 
-        <RadioButton
+        <Button
             android:id="@+id/option2Button"
             style="@style/answerButtonStyle"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="16dp"
             android:text="Button"
-            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintBottom_toTopOf="@+id/centerHorizontalGuideline"
             app:layout_constraintStart_toStartOf="@+id/centerVerticalGuideline" />
-        </TableRow>
 
-    <TableRow>
-        <RadioButton
+        <Button
             android:id="@+id/option3Button"
             style="@style/answerButtonStyle"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="Button"
             app:layout_constraintEnd_toStartOf="@+id/centerVerticalGuideline"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
+            app:layout_constraintTop_toTopOf="@+id/centerHorizontalGuideline" />
 
-        <RadioButton
+        <Button
             android:id="@+id/option4Button"
             style="@style/answerButtonStyle"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="Button"
             app:layout_constraintStart_toStartOf="@+id/centerVerticalGuideline"
-            app:layout_constraintTop_toTopOf="@+id/guideline3" />
-    </TableRow>
-    </RadioGroup>
+            app:layout_constraintTop_toTopOf="@+id/centerHorizontalGuideline" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <Button
         android:id="@+id/nextQuestionButton"
@@ -83,6 +80,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/centerVerticalGuideline"
         android:layout_width="wrap_content"
@@ -91,7 +89,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/centerHorizontalGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

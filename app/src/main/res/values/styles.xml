@@ -24,7 +24,6 @@
     <style name="answerButtonStyle">
         <item name="android:layout_width">130dp</item>
         <item name="android:layout_height">130dp</item>
-        <item name="android:button">@null</item>
         <item name="android:background">@drawable/quiz_answers_selector</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">18sp</item>
