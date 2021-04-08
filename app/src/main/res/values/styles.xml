@@ -60,4 +60,8 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <style name="BlueDescriptionStyle" parent="BlueTextStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>
