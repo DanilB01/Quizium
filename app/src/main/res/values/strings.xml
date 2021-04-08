@@ -3,4 +3,8 @@
     <string name="chooseQuiz">Выбрать викторину</string>
     <string name="seeRanking">Посмотреть рейтинг</string>
     <string name="quit">Выйти</string>
+    <string name="retry">Повторить</string>
+    <string name="onMain">На главную</string>
+    <string name="retrySuggestion">Желаете улучшить свой результат и пройти тест заново?</string>
+    <string name="nextQuestion">Следующий вопрос</string>
 </resources>
