@@ -21,8 +21,8 @@ public class QuizListActivity extends AppCompatActivity {
         InitCategories();
         InitQuizData();
         RecyclerView recyclerView = findViewById(R.id.quizRecyclerView);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, quizList);
-        recyclerView.setAdapter(adapter);
+        //RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, quizList);
+        //recyclerView.setAdapter(adapter);
     }
 
     private void InitQuizData() {

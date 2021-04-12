@@ -2,11 +2,11 @@ package ru.tsu.quizium;
 
 public class RecyclerViewItem {
 
-    private Quiz quiz;
-    private Category category;
-    private int typeCode;
+    private final Quiz quiz;
+    private final Category category;
+    private final int typeCode;
 
-    RecyclerViewDataTypeCode type = new RecyclerViewDataTypeCode();
+    private final RecyclerViewDataTypeCode type = new RecyclerViewDataTypeCode();
 
     RecyclerViewItem(Quiz quiz){
         this.quiz = quiz;
@@ -17,5 +17,17 @@ public class RecyclerViewItem {
         this.quiz = null;
         this.category = category;
         this.typeCode = type.TYPE_CATEGORY;
+    }
+
+    public int getTypeCode(){
+        return typeCode;
+    }
+
+    public Quiz getQuiz(){
+        return quiz;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 }
