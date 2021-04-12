@@ -7,13 +7,13 @@ public class Quiz {
     private final String name;
     private final String description;
     private final String author;
-    private final Drawable previewPicture;
+    private final int pictureResource;
 
-    public Quiz(String name, String description, String author, Drawable picture) {
+    public Quiz(String name, String description, String author, int picture) {
         this.name = name;
         this.description = description;
         this.author = author;
-        this.previewPicture = picture;
+        this.pictureResource = picture;
     }
 
     public String getName(){
@@ -28,5 +28,5 @@ public class Quiz {
         return author;
     }
 
-    public Drawable getPreviewPicture() { return previewPicture; }
+    public int getPreviewPicture() { return pictureResource; }
 }

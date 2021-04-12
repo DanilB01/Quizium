@@ -32,7 +32,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
         Quiz quiz = quizList.get(position);
-        holder.previewPictureView.setImageDrawable(quiz.getPreviewPicture());
+        holder.previewPictureView.setImageResource(quiz.getPreviewPicture());
         holder.nameView.setText(quiz.getName());
         holder.descriptionView.setText(quiz.getDescription());
         holder.authorView.setText(quiz.getAuthor());
@@ -51,7 +51,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             previewPictureView = (ImageView) view.findViewById(R.id.quizLogoImageView);
             nameView = (TextView) view.findViewById(R.id.titleTextView);
             descriptionView = (TextView) view.findViewById(R.id.descriptionTextView);
-            authorView = (TextView) view.findViewById(R.id.quizAuthorTextView);
+            authorView = (TextView) view.findViewById(R.id.authorTextView);
         }
     }
 }
