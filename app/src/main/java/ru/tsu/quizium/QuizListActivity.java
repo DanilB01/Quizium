@@ -12,6 +12,7 @@ public class QuizListActivity extends AppCompatActivity {
 
     private final ArrayList<Quiz> quizList = new ArrayList<Quiz>();
     private final ArrayList<Category> categoryList = new ArrayList<Category>();
+    private final ArrayList<RecyclerViewItem> resultItemList = new ArrayList<RecyclerViewItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +21,19 @@ public class QuizListActivity extends AppCompatActivity {
 
         InitCategories();
         InitQuizData();
+        InitRecyclerViewDataList();
         RecyclerView recyclerView = findViewById(R.id.quizRecyclerView);
-        //RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, quizList);
-        //recyclerView.setAdapter(adapter);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, resultItemList);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void InitRecyclerViewDataList(){
+        for(int i = 0; i < 4; i++){
+            resultItemList.add(new RecyclerViewItem(categoryList.get(i)));
+            for(int j = 0; j < 4; j++){
+                resultItemList.add(new RecyclerViewItem(quizList.get(j)));
+            }
+        }
     }
 
     private void InitQuizData() {
