@@ -1,6 +1,7 @@
 package ru.tsu.quizium;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private final List<Quiz> quizList;
     private final LayoutInflater inflater;
+    private final Context context;
 
     RecyclerViewAdapter(Context context, List<Quiz> quizList) {
         this.quizList = quizList;
         this.inflater = LayoutInflater.from(context);
+        this.context = context;
     }
 
     @NonNull
@@ -32,10 +35,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
         Quiz quiz = quizList.get(position);
-        holder.previewPictureView.setImageDrawable(quiz.getPreviewPicture());
+        holder.previewPictureView.setImageResource(quiz.getPreviewPicture());
         holder.nameView.setText(quiz.getName());
         holder.descriptionView.setText(quiz.getDescription());
-        holder.authorView.setText(quiz.getAuthor());
+        holder.authorView.setText(String.format("%s %s", context.getString(R.string.author), quiz.getAuthor()));
     }
 
     @Override
@@ -51,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             previewPictureView = (ImageView) view.findViewById(R.id.quizLogoImageView);
             nameView = (TextView) view.findViewById(R.id.titleTextView);
             descriptionView = (TextView) view.findViewById(R.id.descriptionTextView);
-            authorView = (TextView) view.findViewById(R.id.quizAuthorTextView);
+            authorView = (TextView) view.findViewById(R.id.authorTextView);
         }
     }
 }

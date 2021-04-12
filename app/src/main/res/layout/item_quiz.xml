@@ -8,7 +8,8 @@
     app:cardElevation="3dp"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
-    android:layout_marginBottom="8dp">
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout"
@@ -32,21 +33,24 @@
             style="@style/BlueDescriptionStyle"
             android:layout_width="0dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
             android:text="Подзаголовок"
-            app:layout_constraintBottom_toBottomOf="@+id/quizLogoImageView"
-            app:layout_constraintStart_toEndOf="@+id/quizLogoImageView" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quizLogoImageView"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/descriptionTextView"
             style="@style/BlueDescriptionStyle"
             android:layout_width="0dp"
-            android:layout_marginBottom="4dp"
-            android:textAlignment="textStart"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
             android:text="Подзаголовок"
-            app:layout_constraintBottom_toTopOf="@+id/authorTextView"
+            android:textAlignment="textStart"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/quizLogoImageView" />
+            app:layout_constraintStart_toEndOf="@+id/quizLogoImageView"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
         <ImageView
             android:id="@+id/quizLogoImageView"
