@@ -1,7 +1,6 @@
 package ru.tsu.quizium;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private final List<Quiz> quizList;
     private final LayoutInflater inflater;
     private final Context context;
+
+    RecyclerViewDataTypeCode typeCode = new RecyclerViewDataTypeCode();
 
     RecyclerViewAdapter(Context context, List<Quiz> quizList) {
         this.quizList = quizList;
