@@ -28,5 +28,13 @@ public class QuizListActivity extends AppCompatActivity {
         quizList.add(new Quiz("Quiz 2", "Description of Quiz 2", "admin", R.drawable.english_vocabulary));
         quizList.add(new Quiz("Quiz 3", "Description of Quiz 3", "admin", R.drawable.math));
         quizList.add(new Quiz("Quiz 4", "Description of Quiz 4", "admin", R.drawable.math));
+        quizList.add(new Quiz("Quiz 1", "Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1", "admin", R.drawable.english_grammar));
+        quizList.add(new Quiz("Quiz 2", "Description of Quiz 2", "admin", R.drawable.english_vocabulary));
+        quizList.add(new Quiz("Quiz 3", "Description of Quiz 3", "admin", R.drawable.math));
+        quizList.add(new Quiz("Quiz 4", "Description of Quiz 4", "admin", R.drawable.math));
+        quizList.add(new Quiz("Quiz 1", "Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1 Description of Quiz 1", "admin", R.drawable.english_grammar));
+        quizList.add(new Quiz("Quiz 2", "Description of Quiz 2", "admin", R.drawable.english_vocabulary));
+        quizList.add(new Quiz("Quiz 3", "Description of Quiz 3", "admin", R.drawable.math));
+        quizList.add(new Quiz("Quiz 4", "Description of Quiz 4", "admin", R.drawable.math));
     }
 }
