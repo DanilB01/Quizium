@@ -25,17 +25,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = inflater.inflate(R.layout.item_quiz, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-
+        Quiz quiz = quizList.get(position);
+        holder.previewPictureView.setImageDrawable(quiz.getPreviewPicture());
+        holder.nameView.setText(quiz.getName());
+        holder.descriptionView.setText(quiz.getDescription());
+        holder.authorView.setText(quiz.getAuthor());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return quizList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
