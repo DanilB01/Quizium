@@ -8,12 +8,14 @@ public class Quiz {
     private final String description;
     private final String author;
     private final int pictureResource;
+    private final String categoryName;
 
-    public Quiz(String name, String description, String author, int picture) {
+    public Quiz(String name, String description, String author, int picture, String categoryName) {
         this.name = name;
         this.description = description;
         this.author = author;
         this.pictureResource = picture;
+        this.categoryName = categoryName;
     }
 
     public String getName(){
@@ -28,5 +30,11 @@ public class Quiz {
         return author;
     }
 
-    public int getPreviewPicture() { return pictureResource; }
+    public int getPreviewPicture(){
+        return pictureResource;
+    }
+
+    public String getCategoryName(){
+        return categoryName;
+    }
 }
