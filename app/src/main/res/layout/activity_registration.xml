@@ -29,6 +29,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
+            android:id="@+id/nameRegistrationEditText"
             style="@style/editTextLayoutStyle"
             android:hint="@string/name"
             android:inputType="textPersonName" />
@@ -44,6 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameTextInputLayout">
 
         <EditText
+            android:id="@+id/emailRegistrationEditText"
             style="@style/editTextLayoutStyle"
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
@@ -59,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mailTextInputLayout">
 
         <EditText
+            android:id="@+id/passwordRegistrationEditText"
             style="@style/editTextLayoutStyle"
             android:hint="@string/password"
             android:inputType="textPassword" />

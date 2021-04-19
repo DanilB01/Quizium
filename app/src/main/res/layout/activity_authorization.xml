@@ -19,7 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
+            android:id="@+id/emailLoginEditText"
             style="@style/editTextLayoutStyle"
             android:hint="@string/email"
             android:inputType="textEmailAddress"/>
@@ -37,6 +38,7 @@
 
 
         <EditText
+            android:id="@+id/passwordLoginEditText"
             style="@style/editTextLayoutStyle"
             android:hint="@string/password"
             android:inputType="textPassword" />
@@ -44,7 +46,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/enterButton"
+        android:id="@+id/loginButton"
         style="@style/buttonStyle"
         android:layout_marginBottom="31dp"
         android:text="@string/enter"

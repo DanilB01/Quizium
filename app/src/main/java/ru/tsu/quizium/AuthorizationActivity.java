@@ -8,37 +8,31 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class AuthorizationActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-
     private FirebaseAuth.AuthStateListener mAuthListener;
+
+    private EditText emailInputText;
+    private EditText passwordInputText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authorization);
 
-        mAuth = FirebaseAuth.getInstance();
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user == null){
-
-                }
-            }
-        };
-
-        Button btn1 = findViewById(R.id.registerButton);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        Button registerButton = findViewById(R.id.registerButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AuthorizationActivity.this, RegistrationActivity.class);
@@ -46,14 +40,32 @@ public class AuthorizationActivity extends AppCompatActivity {
             }
         });
 
+        emailInputText = findViewById(R.id.emailLoginEditText);
+        passwordInputText = findViewById(R.id.passwordLoginEditText);
+
+        Button loginButton = findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signIng(emailInputText.getText().toString(), passwordInputText.getText().toString());
+            }
+        });
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        //updateUI(currentUser);
+    private void signIng(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(AuthorizationActivity.this, "Авторизация успешна", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AuthorizationActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(AuthorizationActivity.this, "Не удалось авторизироваться", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 }

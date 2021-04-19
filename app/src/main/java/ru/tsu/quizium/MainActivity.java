@@ -19,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn1 = findViewById(R.id.selectQuizButton);
         Button btn2 = findViewById(R.id.rankingButton);
-        TextView helloText = findViewById(R.id.helloTextView);
+        TextView changeUserText = findViewById(R.id.changeUserTextView);
 
-        helloText.setOnClickListener(new View.OnClickListener() {
+        changeUserText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AuthorizationActivity.class);
