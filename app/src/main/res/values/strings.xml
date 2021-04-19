@@ -8,4 +8,8 @@
     <string name="retrySuggestion">Желаете улучшить свой результат и пройти тест заново?</string>
     <string name="nextQuestion">Следующий вопрос</string>
     <string name="author">Автор: </string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="enter">Войти</string>
+    <string name="forgetPasswdQuestion">Забыли пароль?</string>
 </resources>

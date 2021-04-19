@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn1 = findViewById(R.id.selectQuizButton);
         Button btn2 = findViewById(R.id.rankingButton);
+        TextView helloText = findViewById(R.id.helloTextView);
 
+        helloText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AuthorizationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
