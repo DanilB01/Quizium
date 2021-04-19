@@ -30,12 +30,10 @@
         android:id="@+id/passwordTextInputLayout"
         style="@style/textInputLayoutStyle"
         android:layout_marginTop="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout">
 
 
         <EditText
@@ -57,15 +55,13 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/forgotPasswd"
+        android:id="@+id/registerButton"
         style="@style/buttonWithoutBack"
         android:layout_marginTop="9dp"
-        android:text="@string/forgetPasswdQuestion"
-        app:layout_constraintBottom_toTopOf="@+id/enterButton"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
