@@ -9,11 +9,13 @@ import kotlinx.android.synthetic.main.activity_authorization.*
 
 class AuthorizationActivity : AppCompatActivity() {
 
-    private val mAuth: FirebaseAuth? = null
+    private var mAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authorization)
+
+        mAuth = FirebaseAuth.getInstance()
 
         registerButton.setOnClickListener {
             val intent = Intent(this@AuthorizationActivity, RegistrationActivity::class.java)
