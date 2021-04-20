@@ -6,10 +6,13 @@ import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 
 class QuizQuestionActivity : AppCompatActivity(), CompoundButton.OnCheckedChangeListener {
+
     var answers = arrayOfNulls<ToggleButton>(4)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
+
         answers[0] = findViewById(R.id.option1Button)
         answers[1] = findViewById(R.id.option2Button)
         answers[2] = findViewById(R.id.option3Button)
