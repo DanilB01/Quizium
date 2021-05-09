@@ -1,9 +1,10 @@
 package ru.tsu.quizium
 
-class Quiz(
-        val name: String,
-        val description: String,
-        val author: String,
-        val previewPicture: Int,
-        val categoryName: String
+data class Quiz(
+        val id: Int = 0,
+        val name: String = "",
+        val description: String = "",
+        val author: String = "",
+        val pictureName: String = "",
+        val questions: List<Question> = emptyList()
 )
