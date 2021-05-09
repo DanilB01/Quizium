@@ -4,8 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_quiz.view.*
 import kotlinx.android.synthetic.main.item_category.view.*
@@ -17,7 +15,7 @@ class RecyclerViewAdapter (
     private val inflater: LayoutInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == RecyclerViewDataTypeCode.TYPE_CATEGORY) {
+        return if (viewType == AppConst.TYPE_CATEGORY) {
             val view = inflater.inflate(R.layout.item_category, parent, false)
             CategoryViewHolder(view)
         } else {
@@ -27,7 +25,7 @@ class RecyclerViewAdapter (
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (getItemViewType(position) == RecyclerViewDataTypeCode.TYPE_CATEGORY) {
+        if (getItemViewType(position) == AppConst.TYPE_CATEGORY) {
             val curHolder = holder as CategoryViewHolder
             curHolder.bind(itemList[position].category)
         } else {
@@ -41,19 +39,20 @@ class RecyclerViewAdapter (
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (itemList[position].typeCode == RecyclerViewDataTypeCode.TYPE_CATEGORY) {
-            RecyclerViewDataTypeCode.TYPE_CATEGORY
+        return if (itemList[position].typeCode == AppConst.TYPE_CATEGORY) {
+            AppConst.TYPE_CATEGORY
         } else {
-            RecyclerViewDataTypeCode.TYPE_QUIZ
+            AppConst.TYPE_QUIZ
         }
     }
 
     class QuizViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(quiz: Quiz?, context: Context) {
-            itemView.quizLogoImageView.setImageResource(quiz!!.previewPicture)
-            itemView.titleTextView.text = quiz.name
-            itemView.descriptionTextView.text = quiz.description
-            itemView.authorTextView.text = String.format("%s %s", context.getString(R.string.author), quiz.author)
+            val picId = context.resources.getIdentifier(quiz?.pictureName, "drawable", context.packageName)
+            itemView.quizLogoImageView.setImageDrawable(context.resources.getDrawable(picId))
+            itemView.titleTextView.text = quiz?.name
+            itemView.descriptionTextView.text = quiz?.description
+            itemView.authorTextView.text = String.format("%s %s", context.getString(R.string.author), quiz?.author)
         }
 
     }

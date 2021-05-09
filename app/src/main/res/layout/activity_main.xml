@@ -20,21 +20,21 @@
     <Button
         android:id="@+id/selectQuizButton"
         style="@style/mainButtonStyle"
-        android:text="@string/chooseQuiz"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/rankingButton"
+        android:text="@string/chooseQuiz"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
 
     <Button
         android:id="@+id/rankingButton"
         style="@style/mainButtonStyle"
+        android:layout_marginTop="32dp"
         android:text="@string/seeRanking"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoImageView"/>
+        app:layout_constraintTop_toBottomOf="@+id/selectQuizButton" />
 
     <Button
         android:id="@+id/quitButton"
@@ -46,16 +46,26 @@
         app:layout_constraintTop_toBottomOf="@+id/rankingButton" />
 
     <TextView
-        android:id="@+id/helloTextView"
+        android:id="@+id/currentUserTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Привет, user!"
+        android:text="Текущий профиль:"
+        android:layout_marginBottom="4dp"
         android:textColor="@color/white"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/userEmailTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/changeUserTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

@@ -8,13 +8,13 @@ class RecyclerViewItem {
     internal constructor(quiz: Quiz?) {
         this.quiz = quiz
         category = null
-        typeCode = RecyclerViewDataTypeCode.TYPE_QUIZ
+        typeCode = AppConst.TYPE_QUIZ
     }
 
     internal constructor(category: Category?) {
         quiz = null
         this.category = category
-        typeCode = RecyclerViewDataTypeCode.TYPE_CATEGORY
+        typeCode = AppConst.TYPE_CATEGORY
     }
 
 }
