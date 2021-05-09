@@ -8,7 +8,7 @@
     tools:context=".QuizQuestionActivity">
 
     <TextView
-        android:id="@+id/questionNumberTextView"
+        android:id="@+id/questionNumberTitleTextView"
         style="@style/purpleTitleTextStyle"
         android:layout_marginTop="32dp"
         android:text="TextView"
@@ -17,13 +17,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/questionTestView"
+        android:id="@+id/questionTitleTextView"
         style="@style/purpleNameTextStyle"
         android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionNumberTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/questionNumberTitleTextView" />
 
         <ToggleButton
             android:id="@+id/option1Button"

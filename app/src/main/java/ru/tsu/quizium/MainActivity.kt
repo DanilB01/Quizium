@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, QuizListActivity::class.java)
             startActivity(intent)
         }
-        rankingButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, QuizResultActivity::class.java)
-            startActivity(intent)
+
+        quitButton.setOnClickListener {
+            finish()
         }
     }
 }

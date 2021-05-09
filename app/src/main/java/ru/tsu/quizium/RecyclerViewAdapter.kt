@@ -1,6 +1,7 @@
 package ru.tsu.quizium
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,6 +54,12 @@ class RecyclerViewAdapter (
             itemView.titleTextView.text = quiz?.name
             itemView.descriptionTextView.text = quiz?.description
             itemView.authorTextView.text = String.format("%s %s", context.getString(R.string.author), quiz?.author)
+            itemView.cardView.setOnClickListener {
+                CurrentQuiz.quiz = quiz!!
+                val intent = Intent(context, QuizStartActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                context.startActivity(intent)
+            }
         }
 
     }
