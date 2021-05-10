@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1015426637706",
+    "project_id": "quizium-01",
+    "storage_bucket": "quizium-01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015426637706:android:ee690e7c4acea3c2f1f273",
+        "android_client_info": {
+          "package_name": "ru.tsu.quizium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015426637706-ot4e0gfbktgm3bfnadq64feg713jp5re.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1wiF7pDmMq4FwaqEMm_HstNWw4sF7Qas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015426637706-ot4e0gfbktgm3bfnadq64feg713jp5re.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

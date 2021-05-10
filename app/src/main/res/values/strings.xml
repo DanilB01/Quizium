@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Quizium</string>
+    <string name="chooseQuiz">Выбрать викторину</string>
+    <string name="seeRanking">Посмотреть рейтинг</string>
+    <string name="quit">Выйти</string>
+    <string name="retry">Повторить</string>
+    <string name="onMain">На главную</string>
+    <string name="retrySuggestion">Желаете улучшить свой результат и пройти тест заново?</string>
+    <string name="nextQuestion">Следующий вопрос</string>
+    <string name="author">Автор: </string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
+    <string name="enter">Войти</string>
+    <string name="forgetPasswdQuestion">Забыли пароль?</string>
+    <string name="createAccount">Создать аккаунт</string>
+    <string name="name">Имя</string>
+    <string name="register">Зарегистрироваться</string>
 </resources>
