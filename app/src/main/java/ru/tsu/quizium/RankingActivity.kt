@@ -34,21 +34,13 @@ class RankingActivity : AppCompatActivity() {
     private fun getUsersResults(){
         usersRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val children = snapshot.children
-                children.forEach {
-                    val curUserResult = it.getValue(User::class.java)
-                    if (curUserResult != null) {
-                        val curUserRank = RankingItem()
-                        curUserRank.userName = curUserResult.name
-
-                        var sumUserPoints = 0
-                        for(result in curUserResult.results){
-                            sumUserPoints += result.points
-                        }
-                        curUserRank.point = sumUserPoints
-
-                        userResultsList.add(curUserRank)
-                    }
+                val children = snapshot.children.mapNotNull { it.getValue(User::class.java) }
+                children.forEach { curUserResult ->
+                    val curUserRank = RankingItem(
+                            curUserResult.name,
+                            curUserResult.results.values.sumBy { it.points }
+                    )
+                    userResultsList.add(curUserRank)
                 }
 
                 userResultsList.sortByDescending{ it.point }
