@@ -37,7 +37,7 @@ class QuizResultActivity : AppCompatActivity() {
             usersRef
                     .child(mAuth.currentUser!!.uid)
                     .child("results")
-                    .child(result.id.toString())
+                    .child(result.id)
                     .setValue(result)
 
             finish()
