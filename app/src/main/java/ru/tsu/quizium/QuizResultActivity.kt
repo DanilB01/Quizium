@@ -34,7 +34,11 @@ class QuizResultActivity : AppCompatActivity() {
         backToQuizListButton.setOnClickListener {
 
             val result = Result(CurrentQuiz.quiz.id, CurrentQuiz.numberOfCorrectAnswers)
-            usersRef.child(mAuth.currentUser!!.uid).child(result.id.toString()).setValue(result)
+            usersRef
+                    .child(mAuth.currentUser!!.uid)
+                    .child("results")
+                    .child(result.id.toString())
+                    .setValue(result)
 
             finish()
         }

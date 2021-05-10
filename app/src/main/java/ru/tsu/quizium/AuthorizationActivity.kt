@@ -35,10 +35,6 @@ class AuthorizationActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-
-                        //val result = Result(1, 500)
-                        //ref.child(mAuth.currentUser!!.uid).child(result.id.toString()).setValue(result)
-
                         Toast.makeText(this@AuthorizationActivity, "Авторизация успешна", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@AuthorizationActivity, MainActivity::class.java)
                         startActivity(intent)

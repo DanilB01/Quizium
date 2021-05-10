@@ -8,14 +8,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var mAuth: FirebaseAuth? = null
+    private val mAuth by lazy { FirebaseAuth.getInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mAuth = FirebaseAuth.getInstance()
-        val email = mAuth!!.currentUser?.email
+        val email = mAuth.currentUser?.email
         userEmailTextView.text = email
 
         changeUserTextView.setOnClickListener {
@@ -24,6 +23,11 @@ class MainActivity : AppCompatActivity() {
         }
         selectQuizButton.setOnClickListener {
             val intent = Intent(this@MainActivity, QuizListActivity::class.java)
+            startActivity(intent)
+        }
+
+        rankingButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, RankingActivity::class.java)
             startActivity(intent)
         }
 

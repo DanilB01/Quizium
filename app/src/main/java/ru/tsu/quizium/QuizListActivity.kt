@@ -11,7 +11,6 @@ import java.util.*
 
 class QuizListActivity : AppCompatActivity() {
 
-    private val quizList = ArrayList<Quiz>()
     private val categoryList = mutableListOf<Category>()
     private val resultItemList = ArrayList<RecyclerViewItem>()
 
@@ -52,7 +51,5 @@ class QuizListActivity : AppCompatActivity() {
             }
 
         })
-
-
     }
 }
