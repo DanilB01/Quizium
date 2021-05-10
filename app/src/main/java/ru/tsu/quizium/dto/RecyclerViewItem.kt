@@ -1,4 +1,6 @@
-package ru.tsu.quizium
+package ru.tsu.quizium.dto
+
+import ru.tsu.quizium.AppConst
 
 class RecyclerViewItem {
     val quiz: Quiz?

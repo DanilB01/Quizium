@@ -1,4 +1,4 @@
-package ru.tsu.quizium
+package ru.tsu.quizium.dto
 
 data class Question(
         val id: Int = 0,

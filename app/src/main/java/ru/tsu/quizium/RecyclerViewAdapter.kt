@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_quiz.view.*
 import kotlinx.android.synthetic.main.item_category.view.*
+import ru.tsu.quizium.dto.Category
+import ru.tsu.quizium.dto.Quiz
+import ru.tsu.quizium.dto.RecyclerViewItem
 
 class RecyclerViewAdapter (
         private val context: Context,

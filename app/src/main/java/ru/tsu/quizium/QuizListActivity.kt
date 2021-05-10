@@ -3,8 +3,10 @@ package ru.tsu.quizium
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import ru.tsu.quizium.dto.Category
+import ru.tsu.quizium.dto.Quiz
+import ru.tsu.quizium.dto.RecyclerViewItem
 import java.util.*
 
 class QuizListActivity : AppCompatActivity() {

@@ -5,17 +5,20 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_authorization.*
+import ru.tsu.quizium.dto.Result
 
 class AuthorizationActivity : AppCompatActivity() {
 
-    private var mAuth: FirebaseAuth? = null
+    private val mAuth by lazy { FirebaseAuth.getInstance() }
+
+    private val database by lazy { FirebaseDatabase.getInstance() }
+    private val ref by lazy { database.reference }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_authorization)
-
-        mAuth = FirebaseAuth.getInstance()
 
         registerButton.setOnClickListener {
             val intent = Intent(this@AuthorizationActivity, RegistrationActivity::class.java)
@@ -29,9 +32,13 @@ class AuthorizationActivity : AppCompatActivity() {
     }
 
     private fun signIng(email: String, password: String) {
-        mAuth!!.signInWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+
+                        //val result = Result(1, 500)
+                        //ref.child(mAuth.currentUser!!.uid).child(result.id.toString()).setValue(result)
+
                         Toast.makeText(this@AuthorizationActivity, "Авторизация успешна", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this@AuthorizationActivity, MainActivity::class.java)
                         startActivity(intent)
